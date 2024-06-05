@@ -1,0 +1,9 @@
+_events()
+
+foreach ~Source {
+	if :Trigger; then
+		do :Trigger {oid newline}
+	else
+		do >() {do :Trigger {oid newline}}
+	endif
+}

@@ -1,0 +1,85 @@
+Graph_State_machine_user_3855893507
+Miss Grant
+3_6062
+State machine
+Graph: Miss Grant <State machine> 3_6062
+	Name: Miss Grant
+	Description: Security box for Miss Grant.
+Object: idle <Situation> 3_6073
+	Name: idle
+	Command: unlockDoor D1UL lockPanel PNLK
+	Object: unlockDoor D1UL <Command> 3_6087
+		Name: unlockDoor
+		Code: D1UL
+	Object: lockPanel PNLK <Command> 3_6097
+		Name: lockPanel
+		Code: PNLK
+Object: active <Situation> 3_6107
+	Name: active
+	Command: 
+Object: waitingForDrawer <Situation> 3_6137
+	Name: waitingForDrawer
+	Command: 
+Object: waitingForLight <Situation> 3_6151
+	Name: waitingForLight
+	Command: 
+Object: unlockedPanel <Situation> 3_6165
+	Name: unlockedPanel
+	Command: unlockPanel PNUL lockDoor D1LK
+	Object: unlockPanel PNUL <Command> 3_6179
+		Name: unlockPanel
+		Code: PNUL
+	Object: lockDoor D1LK <Command> 3_6189
+		Name: lockDoor
+		Code: D1LK
+Object: Start <Start> 3_7078
+Relationship:  <Transition> 3_6863
+	Trigger: 
+  Role: doorClosed D1CL <Source>  Object: <Situation> 3_6073
+	Trigger: doorClosed D1CL
+	Object: doorClosed D1CL <Event> 3_6207
+		Name: doorClosed
+		Code: D1CL
+  Role: Target <Target>  Object: <Situation> 3_6107
+Relationship:  <Transition> 3_6873
+	Trigger: 
+  Role: lightOn L1ON <Source>  Object: <Situation> 3_6107
+	Trigger: lightOn L1ON
+	Object: lightOn L1ON <Event> 3_6229
+		Name: lightOn
+		Code: L1ON
+  Role: Target <Target>  Object: <Situation> 3_6137
+Relationship:  <Transition> 3_6883
+	Trigger: 
+  Role: drawerOpened D2OP <Source>  Object: <Situation> 3_6137
+	Trigger: drawerOpened D2OP
+	Object: drawerOpened D2OP <Event> 3_6251
+		Name: drawerOpened
+		Code: D2OP
+  Role: Target <Target>  Object: <Situation> 3_6165
+Relationship:  <Transition> 3_6893
+	Trigger: 
+  Role: drawerOpened D2OP <Source>  Object: <Situation> 3_6107
+	Trigger: drawerOpened D2OP
+  Role: Target <Target>  Object: <Situation> 3_6151
+Relationship:  <Transition> 3_6903
+	Trigger: 
+  Role: lightOn L1ON <Source>  Object: <Situation> 3_6151
+	Trigger: lightOn L1ON
+  Role: Target <Target>  Object: <Situation> 3_6165
+Relationship:  <Transition> 3_6913
+	Trigger: 
+  Role: panelClosed PNCL <Source>  Object: <Situation> 3_6165
+	Trigger: panelClosed PNCL
+	Object: panelClosed PNCL <Event> 3_6297
+		Name: panelClosed
+		Code: PNCL
+  Role: Target <Target>  Object: <Situation> 3_6073
+Relationship:  <Transition> 3_7081
+	Trigger: 
+  Role: doorOpened D1OP <Source>  Object: <Start> 3_7078
+	Trigger: doorOpened D1OP
+	Object: doorOpened D1OP <Event> 3_7023
+		Name: doorOpened
+		Code: D1OP
+  Role: Target <Target>  Object: <Situation> 3_6073

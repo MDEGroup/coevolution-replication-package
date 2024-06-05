@@ -1,0 +1,111 @@
+==========================
+Graph Type
+==========================
+State machine
+	State modeling langauge to specify Gothic secuity system.
+	---------------------------------------------
+	Name: String
+		Name of the state machine
+		---------------------------------------------
+	Description: Text
+		Free from description of the element.
+		---------------------------------------------
+
+==========================
+Object Types
+==========================
+Situation
+	Situation of the Gothic Security system.
+	---------------------------------------------
+	Name: String
+		Mandatory name of the state.
+		---------------------------------------------
+	Command: OrderedCollection (Command)
+		A set of commands done within the state.
+		---------------------------------------------
+Start
+
+==========================
+Relationship Types
+==========================
+Transition
+	Transition between states, triggered by one event.
+	---------------------------------------------
+	Trigger: Event
+		An event triggering the transition.
+		---------------------------------------------
+
+==========================
+Role Types
+==========================
+Source
+	Source of the transition.
+	---------------------------------------------
+	Trigger: Event
+		An event triggering the transition.
+		---------------------------------------------
+Target
+	Points to the target of the transition.
+	---------------------------------------------
+
+==========================
+Extra Types
+==========================
+Abstract Event
+	Name: String
+		Name of the event is mandatory.
+		---------------------------------------------
+	Code: String
+		Code is a mandatory field.
+		---------------------------------------------
+Command
+	A command within the Gothic security system.
+	---------------------------------------------
+	Name: String
+		Name of the event is mandatory.
+		---------------------------------------------
+	Code: String
+		Code is a mandatory field.
+		---------------------------------------------
+Event
+	Event in the state machine causing transsition.
+	---------------------------------------------
+	Name: String
+		Name of the event is mandatory.
+		---------------------------------------------
+	Code: String
+		Code is a mandatory field.
+		---------------------------------------------
+
+==========================
+Bindings
+==========================
+Transition
+	Source: Situation, Start
+	Target: Situation
+
+==========================
+Constraints
+==========================
+Start may be in at most 1 Transition relationship
+Start may occur at most 1 time
+Property "Name" in Situation must have unique values
+
+==========================
+Subgraphs
+==========================
+
+==========================
+Generators
+==========================
+!Code
+
+==========================
+Sub-Generators
+==========================
+_commands
+_events
+_resetChecks
+_target
+__LiveCheck
+
